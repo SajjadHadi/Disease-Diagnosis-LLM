@@ -12,7 +12,7 @@ from trl import SFTTrainer, SFTConfig, DataCollatorForCompletionOnlyLM
 
 BASE_PROJECT_NAME = 'Disease-Diagnosis'
 BASE_MODEL = "mistralai/Mistral-7B-v0.3"
-PROJECT_NAME = f"{BASE_PROJECT_NAME}-{BASE_MODEL.split('/')[1]}LoRA64"
+PROJECT_NAME = f"{BASE_PROJECT_NAME}-{BASE_MODEL.split('/')[1]}"
 HF_USER = "sajjadhadi"
 
 HUB_MODEL_NAME = f"{HF_USER}/{PROJECT_NAME}"
