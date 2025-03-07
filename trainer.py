@@ -1,6 +1,5 @@
 import os
 
-import modal
 import torch
 import wandb
 from datasets import load_dataset, Dataset
@@ -21,25 +20,6 @@ def tokenize_dataset(dataset, tokenizer, max_seq_length):
         )
 
     return dataset.map(tokenize_function, batched=True, remove_columns=["text"])
-
-
-def create_image():
-    return (
-        modal.Image.debian_slim(python_version="3.10")
-        .pip_install(
-            "torch",
-            "transformers",
-            "datasets",
-            "peft",
-            "bitsandbytes",
-            "wandb",
-            "accelerate",
-            "huggingface_hub",
-            "trl",
-            "sentencepiece"
-        )
-        .apt_install("git")
-    )
 
 
 def train_model(config, volume=None):
