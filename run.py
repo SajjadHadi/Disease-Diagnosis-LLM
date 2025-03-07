@@ -33,7 +33,7 @@ volume = modal.Volume.from_name(f'{config["project_name"]}-outputs', create_if_m
     secrets=[modal.Secret.from_name("llm-fine-tuning-secrets")]
 )
 def run_training():
-    train_model(config, volume=modal.Volume.lookup(f"{config['project']['name']}-outputs"))
+    train_model(config, volume=modal.Volume.lookup(f"{config['project_name']}-outputs"))
 
 
 @app.local_entrypoint()
