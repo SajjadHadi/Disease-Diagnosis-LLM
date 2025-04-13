@@ -78,7 +78,7 @@ This guide assumes you have a `.env` file with `HF_SECRET` and `WANDB_API_KEY`, 
 5. **Run the Training**
    - Execute the training script via Modal:
      ```bash
-     python run.py
+     modal run run.py
      ```
    - This will:
      - Build the Modal image with dependencies.
